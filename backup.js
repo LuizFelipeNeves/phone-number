@@ -1,9 +1,6 @@
 
 const rp = require('request-promise');
 const cheerio = require('cheerio');
-const express = require('express');
-
-const app = express();
 
 function getoptions(number) {
   const options = {
@@ -22,7 +19,6 @@ function getoptions(number) {
 }
 
 function getphone(number) {
-  return new Promise(((resolve, reject) => {
     const options = getoptions(number);
     rp(options)
       .then(($) => {
@@ -35,25 +31,10 @@ function getphone(number) {
           number, type, location, contrycode, countryname, contrynetwork,
         };
         console.log(info); // infos
-        resolve(info);
       })
       .catch((err) => {
-        reject(err);
+        console.log(err);
       });
-  }));
 }
 
-const deb = getphone('551130568628')
-  .then(val => (val)).catch(err => (err));
-
-console.log(deb);
-
-app.get('/:number', (req, res) => {
-  const info = getphone(req.params.number);
-  console.log(info); // undefined
-  res.send(info);
-});
-
-app.listen((process.env.PORT || 5000));
-console.log(`Started on port: ${process.env.PORT || 5000}`);
-exports = module.exports = app;
+getphone('551130568628')
