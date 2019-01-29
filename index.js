@@ -32,7 +32,12 @@ function getphone(number) {
         const countryname = $('tr:nth-of-type(7) td:nth-of-type(2)').text();
         const contrynetwork = $('tr:nth-of-type(8) td:nth-of-type(2)').text();
         const info = {
-          number, type, location, contrycode, countryname, contrynetwork,
+          number,
+          type,
+          location,
+          contrycode, 
+          countryname, 
+          contrynetwork,
         };
         resolve(info);
       })
