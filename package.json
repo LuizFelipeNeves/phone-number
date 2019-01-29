@@ -1,0 +1,28 @@
+{
+  "name": "phone-number",
+  "version": "0.0.1",
+  "description": "This simple api using web scraping was created to get information about certain phone numbers,",
+  "keywords": [
+    "cheerio",
+    "crawler",
+    "scraping-websites"
+  ],
+  "main": "index.js",
+  "author": "LuizFelipeNeves",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuizFelipeNeves/phone-number"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0"
+  }
+}
