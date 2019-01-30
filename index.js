@@ -14,7 +14,7 @@ function getoptions(number) {
       'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:24.0) Gecko/20100101 Firefox/24.0',
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    transform(body) {
+    transform(body) { 
       return cheerio.load(body);
     },
   };
@@ -22,9 +22,8 @@ function getoptions(number) {
 }
 
 function getphone(number) {
-  return new Promise(((resolve, reject) => {
     const options = getoptions(number);
-    rp(options)
+    return rp(options)
       .then(($) => {
         const type = $('tr:nth-of-type(2) td:nth-of-type(2)').text();
         const location = $('tr:nth-of-type(5) td:nth-of-type(2)').text();
@@ -39,23 +38,14 @@ function getphone(number) {
           countryname, 
           contrynetwork,
         };
-        resolve(info);
-      })
-      .catch((err) => {
-        reject(err);
+        return(info);
       });
-  }));
 }
 
 app.get('/:number', (req, res) => {
-  (async () => {
-    try {
-      const info = await getphone(req.params.number);
-      res.send(info);
-    } catch (err) {
-      res.send(err);
-    }
-  })();
+  getphone(req.params.number)
+    .then(info => res.send(info))
+    .catch(err => res.send(err))
 });
 
 app.listen((process.env.PORT || 5000));
