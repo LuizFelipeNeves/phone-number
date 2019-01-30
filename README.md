@@ -22,3 +22,7 @@ npm install
 Ex: https://localhost:5000/551130568628
   
 ![Export](./img/1.png)
+
+
+### Acknowledgments
+Thanks @micalevisk for help with doubts and improvements. 
