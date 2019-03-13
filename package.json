@@ -7,7 +7,10 @@
     "crawler",
     "scraping-websites"
   ],
-  "main": "index.js",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "author": "LuizFelipeNeves",
   "license": "MIT",
   "repository": {
