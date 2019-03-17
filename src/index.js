@@ -1,10 +1,10 @@
-const number = require('./modulos/number'); // get number
+const getphone = require('./modulos/number'); // get number
 
 const express = require('express');
 const app = express();
 
 app.get('/v1/phone/:number', (req, res) => {
-  number.getphone(req.params.number)
+  getphone(req.params.number)
     .then(info => res.send(info))
     .catch(err => res.send(err))
 });

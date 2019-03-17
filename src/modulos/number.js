@@ -16,25 +16,26 @@ function getoptions(number) {
   };
   return options;
 }
-module.exports = {
-  getphone: function(number) {
-      const options = getoptions(number);
-      return rp(options)
-        .then(($) => {
-          const type = $('tr:nth-of-type(2) td:nth-of-type(2)').text();
-          const location = $('tr:nth-of-type(5) td:nth-of-type(2)').text();
-          const contrycode = $('tr:nth-of-type(6) td:nth-of-type(2)').text();
-          const countryname = $('tr:nth-of-type(7) td:nth-of-type(2)').text();
-          const contrynetwork = $('tr:nth-of-type(8) td:nth-of-type(2)').text();
-          const info = {
-            number,
-            type,
-            location,
-            contrycode, 
-            countryname, 
-            contrynetwork,
-          };
-          return(info);
-        });
-  }
+
+function getphone(number) {
+  const options = getoptions(number);
+  return rp(options)
+    .then(($) => {
+      const type = $('tr:nth-of-type(2) td:nth-of-type(2)').text();
+      const location = $('tr:nth-of-type(5) td:nth-of-type(2)').text();
+      const contrycode = $('tr:nth-of-type(6) td:nth-of-type(2)').text();
+      const countryname = $('tr:nth-of-type(7) td:nth-of-type(2)').text();
+      const contrynetwork = $('tr:nth-of-type(8) td:nth-of-type(2)').text();
+      const info = {
+        number,
+        type,
+        location,
+        contrycode, 
+        countryname, 
+        contrynetwork,
+      };
+      return(info);
+    });
 }
+
+module.exports = getphone;
