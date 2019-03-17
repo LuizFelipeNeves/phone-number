@@ -21,7 +21,7 @@ npm install
 ```
 
 ### Usage
-Ex: https://localhost:5000/551130568628
+Ex: https://localhost:5000/v1/phone/551130568628
   
 ![Export](./img/1.png)
 
