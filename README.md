@@ -1,6 +1,10 @@
 # Phone-number
 [![BCH compliance](https://bettercodehub.com/edge/badge/LuizFelipeNeves/phone-number?branch=master)](https://bettercodehub.com/)
 
+> :warning: **This repository is deprecated, it is necessary update to circumvent recaptcha with serviçes**: 
+> - https://2captcha.com
+
+
 This simple api using web scraping was created to get information about certain phone numbers.
 
 It was written to get info from phone numbers, by not using a browser behind, it becomes much faster and consume fewer resources using cheerio <3.
